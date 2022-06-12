@@ -3,7 +3,7 @@ import { BrandWithTagline } from '@/components';
 import { authAPI } from '@/libs/api/authAPI';
 import { authService } from '@/libs/auth';
 import { useForm, useMounted } from '@/libs/hooks';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { initialErrors, initialValues, validateForm } from './validations';
 
@@ -12,25 +12,28 @@ const Login = () => {
 	const isMounted = useMounted();
 	const navigate = useNavigate();
 
-	const handleFormSubmit = async (payload: IAPI.LoginParams) => {
-		setLoading(true);
+	const handleFormSubmit = useCallback(
+		async (payload: IAPI.LoginParams) => {
+			setLoading(true);
 
-		try {
-			const { success, data, message } = await authAPI.login(payload);
-			if (!success) {
-				throw new Error(message);
-			}
+			try {
+				const { success, data, message } = await authAPI.login(payload);
+				if (!success) {
+					throw new Error(message);
+				}
 
-			authService.setToken(data.access_token);
-			authService.setRefreshToken(data.refresh_token);
-			navigate('/dashboard');
-		} catch (error) {
-		} finally {
-			if (isMounted()) {
-				setLoading(false);
+				authService.setToken(data.access_token);
+				authService.setRefreshToken(data.refresh_token);
+				navigate('/dashboard');
+			} catch (error) {
+			} finally {
+				if (isMounted()) {
+					setLoading(false);
+				}
 			}
-		}
-	};
+		},
+		[navigate, isMounted]
+	);
 
 	const { values, handleSubmit, handleChange } = useForm({
 		initialValues,

@@ -1,10 +1,5 @@
 import { useCallback, useEffect, useRef } from 'react';
 
-/**
- * This hook returns a boolean value that indicates whether
- * the component is mounted. It is used to avoid calling
- * `setState` on an unmounted component.
- */
 export const useMounted = () => {
 	const isMountedRef = useRef(true);
 
@@ -19,3 +14,5 @@ export const useMounted = () => {
 
 	return isMounted;
 };
+
+export default useMounted;
