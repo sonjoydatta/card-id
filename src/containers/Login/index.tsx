@@ -1,6 +1,6 @@
 /* eslint-disable no-empty */
 import { BrandWithTagline } from '@/components';
-import { authAPI } from '@/libs/api/authAPI';
+import { authAPI } from '@/libs/api';
 import { authService } from '@/libs/auth';
 import { useForm, useMounted } from '@/libs/hooks';
 import { useCallback, useState } from 'react';
@@ -22,8 +22,8 @@ const Login = () => {
 					throw new Error(message);
 				}
 
-				authService.setToken(data.access_token);
-				authService.setRefreshToken(data.refresh_token);
+				const { access_token, refresh_token } = data;
+				authService.setTokens(access_token, refresh_token);
 				navigate('/dashboard');
 			} catch (error) {
 			} finally {
@@ -71,7 +71,9 @@ const Login = () => {
 						/>
 						<button
 							type='submit'
-							className='bg-blue-600 font-semibold p-3 rounded-md text-center text-white w-full'
+							className={`bg-blue-600 font-semibold p-3 rounded-md text-center text-white w-full ${
+								isLoading ? 'opacity-50 cursor-not-allowed' : ''
+							}`}
 							disabled={isLoading}
 						>
 							Log In
