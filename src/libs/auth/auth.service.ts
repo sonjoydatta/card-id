@@ -20,7 +20,12 @@ export class AuthService {
 		localStorage.setItem('refreshToken', token);
 	}
 
-	removeToken() {
+	setTokens(token: string, refreshToken: string) {
+		this.setToken(token);
+		this.setRefreshToken(refreshToken);
+	}
+
+	removeTokens() {
 		localStorage.removeItem('token');
 		localStorage.removeItem('refreshToken');
 		this.listners.forEach((listner) => listner(null));

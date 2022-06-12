@@ -1,7 +1,12 @@
 {
   "name": "card-id",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "author": {
+    "name": "Sonjoy Datta",
+    "email": "sonjoy.dat@gmail.com",
+    "url": "https://sonjoydatta.me"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

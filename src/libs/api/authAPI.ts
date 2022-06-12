@@ -6,7 +6,13 @@ class AuthAPI {
 	constructor(private http: HttpService) {}
 
 	login(payload: LoginParams) {
-		return this.http.post<LoginResponse>('user/login', payload);
+		return this.http.post<LoginResponse>('user/login/', payload, {
+			headers: {
+				'grant-type': 'password',
+				'client-id': config.clientID,
+				'client-secret': config.clientSecret,
+			},
+		});
 	}
 }
 
