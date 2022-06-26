@@ -1,0 +1,1476 @@
+{
+	"info": {
+		"_postman_id": "1ed11c6b-8194-4929-a0ee-3a617c68a1cf",
+		"name": "CARD ID",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6272813"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "User Login",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "grant-type",
+								"value": "{{grant_type}}",
+								"type": "text"
+							},
+							{
+								"key": "client-id",
+								"value": "{{client_id}}",
+								"type": "text"
+							},
+							{
+								"key": "client-secret",
+								"value": "{{client_secret}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"{{email}}\",\n    \"password\": \"{{password}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/login/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"{{email}}\",\n    \"firstname\": \"Farjanul\",\n    \"lastname\": \"Nayem\",\n    \"password\": \"{{password}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/create/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"create",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Logout",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "string"
+							},
+							{
+								"key": "client-id",
+								"value": "{{client_id}}",
+								"type": "string"
+							},
+							{
+								"key": "client-secret",
+								"value": "{{client_secret}}",
+								"type": "string"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/logout/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"logout",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User refresh",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "grant-type-refresh",
+								"value": "{{grant_type_refresh}}",
+								"type": "string"
+							},
+							{
+								"key": "client-id",
+								"value": "{{client_id}}",
+								"type": "string"
+							},
+							{
+								"key": "client-secret",
+								"value": "{{client_secret}}",
+								"type": "string"
+							},
+							{
+								"key": "refresh-token",
+								"value": "{{refresh_token}}",
+								"type": "string"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/user/refresh/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"refresh",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Password update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "string"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"old_password\": \"findone55\",\n    \"new_password\": \"helloadmin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/password_update/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"password_update",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Password reset otp",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "email",
+								"value": "{{email}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/user/password_reset/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"password_reset",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Password reset",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "otp",
+								"value": "438235",
+								"type": "string"
+							},
+							{
+								"key": "email",
+								"value": "{{email}}",
+								"type": "string"
+							},
+							{
+								"key": "password",
+								"value": "helloadmin",
+								"type": "string"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/user/password_reset/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"password_reset",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "string"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/user/profile/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"profile",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User update",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "string"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"website\": \"https://example.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/profile/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"profile",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Resend verify OTP",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "string"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/user/resend/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"resend",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Email verified",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "otp",
+								"value": "454332",
+								"type": "string"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "string"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/user/verify/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"verify",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Email update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "string"
+							},
+							{
+								"key": "email",
+								"value": "{{email}}",
+								"type": "string"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/user/email_update/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"email_update",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "vCard",
+			"item": [
+				{
+					"name": "Card list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "string"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/vcard/card/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"vcard",
+								"card",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Card create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "string"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"BNS Bahar\",\n    \"organization\": \"Somoy TV\",\n    \"designation\": \"Software Engineer\",\n    \"address\": \"89, Bir Uttam, Dhaka - 1217\",\n    \"website\": \"https://somoynews.tv\",\n    \"phone\": [{\"phone\": \"+8801711070400\"}],\n    \"email\": [{\"email\": \"farjanul@icloud.com\"}],\n    \"tags\": [3]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/vcard/card/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"vcard",
+								"card",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add card from card id",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "string"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/vcard/card/add_by/card_id/?card_id=QniHnq",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"vcard",
+								"card",
+								"add_by",
+								"card_id",
+								""
+							],
+							"query": [
+								{
+									"key": "card_id",
+									"value": "QniHnq"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "404",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "string"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"BNS Bahar\",\n    \"organization\": \"Somoy TV\",\n    \"designation\": \"Software Engineer\",\n    \"address\": \"89, Bir Uttam, Dhaka - 1217\",\n    \"website\": \"https://somoynews.tv\",\n    \"phone\": [{\"phone\": \"+8801711070400\"}],\n    \"email\": [{\"email\": \"farjanul@icloud.com\"}],\n    \"tags\": [3]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/vcard/card/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"vcard",
+										"card",
+										""
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"detail\": \"Not found.\"\n}"
+						},
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "string"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"BNS Bahar\",\n    \"organization\": \"Somoy TV\",\n    \"designation\": \"Software Engineer\",\n    \"address\": \"89, Bir Uttam, Dhaka - 1217\",\n    \"website\": \"https://somoynews.tv\",\n    \"phone\": [{\"phone\": \"+8801711070400\"}],\n    \"email\": [{\"email\": \"farjanul@icloud.com\"}],\n    \"tags\": [3]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/vcard/card/add_by/card_id/?card_id=QniHnq",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"vcard",
+										"card",
+										"add_by",
+										"card_id",
+										""
+									],
+									"query": [
+										{
+											"key": "card_id",
+											"value": "QniHnq"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"id\": 16,\n    \"email\": [\n        {\n            \"vcard\": 16,\n            \"email\": \"farjanul10@gmail.com\"\n        }\n    ],\n    \"phone\": [],\n    \"tags\": [],\n    \"public_id\": \"a47r6ixU\",\n    \"name\": \"Farjanul Nayem\",\n    \"organization\": \"\",\n    \"designation\": \"\",\n    \"address\": \"\",\n    \"website\": \"www.exaple.com.bd\",\n    \"is_favorite\": false,\n    \"is_active\": true,\n    \"created_at\": \"2022-05-16T16:48:26.160621Z\",\n    \"updated_at\": \"2022-05-16T16:48:26.452678Z\",\n    \"author\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "Card update",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "string"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": [\n        {\n            \"vcard\": 1,\n            \"email\": \"bahar10@gmail.com\"\n        },\n        {\n            \"vcard\": 1,\n            \"email\": \"bahar.web@gmail.com\"\n        }\n    ],\n    \"phone\": [\n        {\n            \"vcard\": 1,\n            \"phone\": \"01714495676\"\n        },\n        {\n            \"vcard\": 1,\n            \"phone\": \"01711070400\"\n        }\n    ],\n    \"tags\": [\n2\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/vcard/card/1/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"vcard",
+								"card",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tag List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "string"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/vcard/subscribe/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"vcard",
+								"subscribe",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tag subscribe",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "string"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tag_name\": \"Facebook\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/vcard/subscribe/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"vcard",
+								"subscribe",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Card delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "string"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/vcard/card/4/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"vcard",
+								"card",
+								"4",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Subscribe delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"subscribe_id\": 3 // subscriber pk not a tag pk\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/vcard/subscribe/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"vcard",
+								"subscribe",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Card Favorite",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "string"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"is_favorite\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/vcard/favorite/3/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"vcard",
+								"favorite",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BCR Filter",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "string"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n  \"Shamsul Haque\",\n  \"Project Manager\",\n  \"Digital Innovation\",\n  \"LEADS\",\n  \"delivers excellence\",\n  \"LEADS Corporation Ltd.\",\n  \"+88 01817 145 618\",\n  \"☺ +880 5513-8731\",\n  \"shamsul.haque@leads-bd.com\",\n  \"© www.leads.com.bd\"\n]\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/vcard/bcr/filter/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"vcard",
+								"bcr",
+								"filter",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BCR",
+			"item": [
+				{
+					"name": "Fliter Data Local",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\"Md. Lokman Hossen\",\"Relationship Officer\",\"Distribution Network\",\"V BRAC BANK\",\"BRAC Bank Limited\",\"New Eskaton Branch \",\"23, New Eskaton Road, House 53623, Dhaka - 1226\", \"Eskaton, Dhaka 1000\",\"Mobile : +88 01722 348467\",\"www.bracbank.com\",\"Global Alliance for \",\"Banking on Values\", \"Mohammadabdulla Almasud@sc.com –\"]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/bcr/filter/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"bcr",
+								"filter",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Server",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n  \"Shamsul Haque\",\n  \"Project Manager\",\n  \"Digital Innovation\",\n  \"LEADS\",\n  \"delivers excellence\",\n  \"LEADS Corporation Ltd.\",\n  \"+88 01817 145 618\",\n  \"☺ +880 5513-8731\",\n  \"shamsul.haque@leads-bd.com\",\n  \"© www.leads.com.bd\"\n]\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bcr.zeroslab.com/api/bcr/filter/",
+							"protocol": "https",
+							"host": [
+								"bcr",
+								"zeroslab",
+								"com"
+							],
+							"path": [
+								"api",
+								"bcr",
+								"filter",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Event",
+			"item": [
+				{
+					"name": "Event menu",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/event/menu/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"event",
+								"menu",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Event list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/event/event/?category=156&country=&city=&venue=&page=1&limit=50",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"event",
+								"event",
+								""
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "156"
+								},
+								{
+									"key": "country",
+									"value": ""
+								},
+								{
+									"key": "city",
+									"value": ""
+								},
+								{
+									"key": "venue",
+									"value": ""
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "50"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Event details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/event/event/400390/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"event",
+								"event",
+								"400390",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/event/save/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"event",
+								"save",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"name\",\n    \"event_id\": \"id\",\n    \"category\": \"Category\",\n    \"venue\": \"venue\",\n    \"place\": \"place\",\n    \"date\": \"date\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/event/save/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"event",
+								"save",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save Remove",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/event/save/id/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"event",
+								"save",
+								"id",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payment",
+			"item": [
+				{
+					"name": "Payment history",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/payment/history/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"payment",
+								"history",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/payment/history/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"payment",
+										"history",
+										""
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 8,\n        \"user\": 1,\n        \"public_id\": \"0hsy1wYNvA\",\n        \"subscription_activated\": true,\n        \"send_email\": true,\n        \"payment_id\": \"2345\",\n        \"payment_amount\": 99,\n        \"payment_status\": \"Success\",\n        \"payment_currency\": \"usd\",\n        \"payment_method_id\": \"3434\",\n        \"payment_receipt_email\": \"user@usr.com\",\n        \"payment_client_secret\": \"sk364738746\",\n        \"payment_created\": \"364783423\",\n        \"created_at\": \"2022-04-13T18:43:11.756418Z\",\n        \"updated_at\": \"2022-04-13T18:43:11.920203Z\"\n    },\n    {\n        \"id\": 7,\n        \"user\": 1,\n        \"public_id\": \"k2XTZibNpm\",\n        \"subscription_activated\": true,\n        \"send_email\": true,\n        \"payment_id\": \"242342332\",\n        \"payment_amount\": 99,\n        \"payment_status\": \"Success\",\n        \"payment_currency\": null,\n        \"payment_method_id\": null,\n        \"payment_receipt_email\": null,\n        \"payment_client_secret\": null,\n        \"payment_created\": \"364783423\",\n        \"created_at\": \"2022-04-13T18:40:53.911227Z\",\n        \"updated_at\": \"2022-04-13T18:40:54.095271Z\"\n    },\n    {\n        \"id\": 5,\n        \"user\": 1,\n        \"public_id\": \"daRGUYI89n\",\n        \"subscription_activated\": false,\n        \"send_email\": false,\n        \"payment_id\": \"24234\",\n        \"payment_amount\": 100,\n        \"payment_status\": \"Success\",\n        \"payment_currency\": null,\n        \"payment_method_id\": null,\n        \"payment_receipt_email\": null,\n        \"payment_client_secret\": null,\n        \"payment_created\": \"364783423\",\n        \"created_at\": \"2022-04-13T18:04:56.443368Z\",\n        \"updated_at\": \"2022-04-13T18:04:56.443395Z\"\n    },\n    {\n        \"id\": 4,\n        \"user\": 1,\n        \"public_id\": \"A9rEhM6HXm\",\n        \"subscription_activated\": true,\n        \"send_email\": true,\n        \"payment_id\": \"237642374\",\n        \"payment_amount\": 99,\n        \"payment_status\": \"Success\",\n        \"payment_currency\": null,\n        \"payment_method_id\": null,\n        \"payment_receipt_email\": null,\n        \"payment_client_secret\": null,\n        \"payment_created\": \"364783423\",\n        \"created_at\": \"2022-04-13T18:03:42.726926Z\",\n        \"updated_at\": \"2022-04-13T18:03:42.911150Z\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Payment add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"payment_id\": \"pi_3KotOGCbKOVHaAhF1cK5esrY\",\n  \"payment_amount\": 1150,\n  \"payment_status\": \"Succeeded\",\n  \"payment_created\": \"1650045424000\",\n  \"payment_currency\": \"usd\",\n  \"payment_method_id\": \"pm_1KotOWCbKOVHaAhFkk4ACXKO\",\n  \"payment_receipt_email\": \"null\",\n  \"payment_client_secret\": \"pi_3KotOGCbKOVHaAhF1cK5esrY_secret_Lwpqg5PfMABD0nQQL4p8ld4p3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://staging.zeroapp.zeroslab.com/payment/history/",
+							"protocol": "https",
+							"host": [
+								"staging",
+								"zeroapp",
+								"zeroslab",
+								"com"
+							],
+							"path": [
+								"payment",
+								"history",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "201",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"payment_id\": \"2345\",\n    \"payment_amount\": 99,\n    \"payment_status\": \"Success\",\n    \"payment_created\": \"364783423\",\n    \"payment_currency\": \"usd\",\n    \"payment_method_id\": \"3434\",\n    \"payment_receipt_email\": \"user@usr.com\",\n    \"payment_client_secret\": \"sk364738746\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/payment/history/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"payment",
+										"history",
+										""
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"id\": 8,\n    \"user\": 1,\n    \"public_id\": \"0hsy1wYNvA\",\n    \"subscription_activated\": true,\n    \"send_email\": true,\n    \"payment_id\": \"2345\",\n    \"payment_amount\": 99,\n    \"payment_status\": \"Success\",\n    \"payment_currency\": \"usd\",\n    \"payment_method_id\": \"3434\",\n    \"payment_receipt_email\": \"user@usr.com\",\n    \"payment_client_secret\": \"sk364738746\",\n    \"payment_created\": \"364783423\",\n    \"created_at\": \"2022-04-13T18:43:11.756418Z\",\n    \"updated_at\": \"2022-04-13T18:43:11.920203Z\"\n}"
+						},
+						{
+							"name": "400",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"payment_id\": \"2345\",\n    \"payment_amount\": 99,\n    \"payment_status\": \"Success\",\n    \"payment_created\": \"364783423\",\n    \"payment_currency\": \"usd\",\n    \"payment_method_id\": \"3434\",\n    \"payment_receipt_email\": \"user@usr.com\",\n    \"payment_client_secret\": \"sk364738746\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/payment/history/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"payment",
+										"history",
+										""
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"payment_id\": [\n        \"Payment History Model with this Payment ID already exists.\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Packages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/payment/package/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"payment",
+								"package",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Premium features",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/payment/premium/features/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"payment",
+								"premium",
+								"features",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Subscription info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/payment/subscription/info/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"payment",
+								"subscription",
+								"info",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Support history",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/support/supports/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"support",
+								"supports",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/payment/history/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"payment",
+										"history",
+										""
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"user\": 1,\n        \"status\": \"PENDING\",\n        \"public_id\": \"4351755778\",\n        \"subject\": \"subject here\",\n        \"content\": \"Content here\",\n        \"support_type\": \"BILLING\",\n        \"created_at\": \"2022-04-19T11:44:57.580559Z\",\n        \"updated_at\": \"2022-04-19T11:44:57.580582Z\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Support submit",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"subject\": \"subject here\",\n    \"content\": \"Content here\",\n    \"support_type\": \"BILLING\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/support/supports/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"support",
+								"supports",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "201",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"payment_id\": \"2345\",\n    \"payment_amount\": 99,\n    \"payment_status\": \"Success\",\n    \"payment_created\": \"364783423\",\n    \"payment_currency\": \"usd\",\n    \"payment_method_id\": \"3434\",\n    \"payment_receipt_email\": \"user@usr.com\",\n    \"payment_client_secret\": \"sk364738746\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/payment/history/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"payment",
+										"history",
+										""
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"user\": 1,\n    \"status\": \"PENDING\",\n    \"public_id\": \"4351755778\",\n    \"subject\": \"subject here\",\n    \"content\": \"Content here\",\n    \"support_type\": \"BILLING\",\n    \"created_at\": \"2022-04-19T11:44:57.580559Z\",\n    \"updated_at\": \"2022-04-19T11:44:57.580582Z\"\n}"
+						},
+						{
+							"name": "400",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"payment_id\": \"2345\",\n    \"payment_amount\": 99,\n    \"payment_status\": \"Success\",\n    \"payment_created\": \"364783423\",\n    \"payment_currency\": \"usd\",\n    \"payment_method_id\": \"3434\",\n    \"payment_receipt_email\": \"user@usr.com\",\n    \"payment_client_secret\": \"sk364738746\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/payment/history/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"payment",
+										"history",
+										""
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"support_type\": [\n        \"\\\"BILLIN\\\" is not a valid choice.\"\n    ]\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

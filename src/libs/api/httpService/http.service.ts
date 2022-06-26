@@ -1,19 +1,11 @@
-export type HttpResponse<T> =
-	| { success: true; data: T; message?: string }
-	| { success: false; data?: T; message: string };
-
-type RequestOptions = {
-	headers?: Record<string, string>;
-};
-
-type RequestBody = string | FormData | null;
-
-type HttpServiceConfig = {
-	getToken?: () => string | null;
-	getRefreshToken?: () => string | null;
-	onRefreshToken?: (token: string) => void;
-	onUnauthorised?: () => void;
-};
+import { ErrorException } from '@/utils/errorException';
+import {
+	HttpResponse,
+	HttpServiceConfig,
+	RefreshTokenResponse,
+	RequestBody,
+	RequestOptions,
+} from './types';
 
 export class HttpService {
 	constructor(private baseURL: string, private config: HttpServiceConfig = {}) {}
@@ -30,12 +22,16 @@ export class HttpService {
 		return this.request<T>('PUT', url, JSON.stringify(body), options);
 	}
 
+	patch<T>(url: string, body: unknown, options?: RequestOptions) {
+		return this.request<T>('PATCH', url, JSON.stringify(body), options);
+	}
+
 	delete<T>(url: string, options?: RequestOptions) {
 		return this.request<T>('DELETE', url, null, options);
 	}
 
-	patch<T>(url: string, body: unknown, options?: RequestOptions) {
-		return this.request<T>('PATCH', url, JSON.stringify(body), options);
+	upload<T>(url: string, formData: FormData, options?: RequestOptions) {
+		return this.request<T>('POST', url, formData, options);
 	}
 
 	private async refreshToken() {
@@ -54,10 +50,17 @@ export class HttpService {
 			});
 
 			if (response.ok) {
-				const { access_token } = (await response.json()) as { access_token: string };
-				this.config.onRefreshToken?.(access_token);
-				return access_token;
+				const data = (await response.json()) as RefreshTokenResponse;
+				const { access_token } = data;
+				if (access_token) {
+					this.config.onUpdateToken?.(access_token);
+					return access_token;
+				}
+
+				throw new Error('Something went wrong');
 			}
+
+			throw new Error('Something went wrong');
 		} catch (error) {
 			return null;
 		}
@@ -69,26 +72,43 @@ export class HttpService {
 		body: RequestBody,
 		options?: RequestOptions
 	): Promise<HttpResponse<T>> {
+		this.config.onLoading?.('start');
 		const requestURL = `${this.baseURL}/${url}`;
 
+		// Request headers
 		const token = this.config.getToken?.();
 		const headers: RequestOptions['headers'] = {
 			'content-type': 'application/json',
-			Authorization: token ? `Bearer ${token}` : '',
 			...options?.headers,
 		};
 
+		if (token) {
+			headers.Authorization = `Token ${token}`;
+		}
+
+		if (body instanceof FormData) {
+			delete headers['content-type'];
+		}
+
+		// Send request
 		try {
 			const response = await fetch(requestURL, {
+				method,
 				headers,
 				body,
-				method,
 			});
 
 			if (response.ok) {
-				return { data: await response.json(), success: true };
+				try {
+					const data = await response.json();
+					return { data, success: true };
+				} catch (error) {
+					return { data: {} as T, success: true };
+				}
 			}
 
+			// Unauthorised
+			// Create new access token using refresh token
 			if (response.status === 401) {
 				const newToken = await this.refreshToken();
 				if (newToken) {
@@ -98,17 +118,16 @@ export class HttpService {
 				this.config.onUnauthorised?.();
 			}
 
-			const error = await response.json().catch(() => ({
-				msg: 'Something went wrong',
-			}));
+			const error = await response.json();
 
-			throw new Error(error.msg);
+			throw new ErrorException(error || 'Something went wrong');
 		} catch (error) {
-			if (error instanceof Error) {
-				return { message: error.message, success: false };
-			}
-
-			return { message: 'Something went wrong', success: false };
+			return {
+				message: error instanceof Error ? error.message : 'Something went wrong',
+				success: false,
+			};
+		} finally {
+			this.config.onLoading?.('complete');
 		}
 	}
 }

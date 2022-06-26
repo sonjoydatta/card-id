@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CARD ID</title>
+
+    <!-- icons
+    ================================================== -->
+    <link rel="stylesheet" href="../assets/css/icons.css">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="../assets/css/uikit.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link href="https://unpkg.com/tailwindcss@%5E2/dist/tailwind.min.css" rel="stylesheet">
+</head> 
+<body>
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header>
+            <div class="header_wrap">
+                <div class="header_inner mcontainer">
+                    <div class="left_side">
+            
+                        <span class="slide_menu" uk-toggle="target: #wrapper ; cls: is-collapse is-active">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M3 4h18v2H3V4zm0 7h12v2H3v-2zm0 7h18v2H3v-2z" fill="currentColor"></path></svg>
+                        </span>
+            
+                        <div id="logo">
+                            <a href="home.html">
+                                <img src="../assets/images/logo.png" alt="">
+                                <img src="../assets/images/logo-mobile.png" class="logo_mobile" alt="">
+                            </a>
+                        </div>
+                    </div>
+            
+                  <!-- search icon for mobile -->
+                    <div class="header-search-icon" uk-toggle="target: #wrapper ; cls: show-searchbox"> </div>
+                    <div class="header_search"><i class="uil-search-alt"></i>
+                        <input value="" type="text" class="form-control" placeholder="Search for Friends , Videos and more.." autocomplete="off">
+                    </div>
+            
+                    <div class="right_side">
+            
+                        <div class="header_widgets">
+                            <a href="pages-upgrade.html" class="is_link">  Upgrade </a>
+                            <a href="#" class="is_icon" uk-tooltip="title: Cart">
+                                <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path></svg>
+                            </a>
+            
+                            <a href="#" class="is_icon" uk-tooltip="title: Notifications">
+                                <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"></path></svg>
+                                <span>3</span>
+                            </a>
+                
+            
+                            <!-- Message -->
+                            <a href="#" class="is_icon" uk-tooltip="title: Message">
+                                <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z" clip-rule="evenodd"></path></svg>
+                                <span>4</span>
+                            </a>
+            
+            
+                            <a href="#">
+                                <img src="../assets/images/avatars/avatar-2.jpg" class="is_avatar" alt="">
+                            </a>
+                            <div uk-drop="mode: click;offset:5" class="header_dropdown profile_dropdown">
+            
+                                <a href="timeline.html" class="user">
+                                    <div class="user_avatar">
+                                        <img src="../assets/images/avatars/avatar-2.jpg" alt="">
+                                    </div>
+                                    <div class="user_name">
+                                        <div> Farjanul Nayem </div>
+                                        <span> farjanul10@gmail.com </span>
+                                    </div>
+                                </a>
+                                <hr>
+                                <a href="pages-upgrade.html" class="is-link">
+                                    <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clip-rule="evenodd"></path></svg>
+                                    Upgrade To Premium  </span>
+                                </a>
+                                <hr>
+                                <a href="http://demo.foxthemes.net/socialitev2.2/page-setting.html">
+                                    <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"></path></svg>
+                                    My Account
+                                </a>
+                                <a href="groups.html">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M3 6a3 3 0 013-3h10a1 1 0 01.8 1.6L14.25 8l2.55 3.4A1 1 0 0116 13H6a1 1 0 00-1 1v3a1 1 0 11-2 0V6z"  clip-rule="evenodd" />
+                                    </svg>
+                                    Manage Pages
+                                </a>
+                                <a href="pages-setting.html">
+                                    <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"></path><path fill-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" clip-rule="evenodd"></path></svg>
+                                    My Billing
+                                </a>
+                                <a href="#" id="night-mode" class="btn-night-mode">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+                                      </svg>
+                                     Night mode
+                                    <span class="btn-night-mode-switch">
+                                        <span class="uk-switch-button"></span>
+                                    </span>
+                                <a href="{% url 'logout' %}?next=/">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+                                    </svg>
+                                    Log Out
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- sidebar -->
+        <div class="sidebar">
+            <div class="sidebar_inner" data-simplebar>
+                <ul>
+                    <li class="active"><a href="feed.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="text-blue-600">
+                            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+                        </svg>
+                        <span> My Cards </span> </a>
+                    </li>
+                    <li><a href="pages.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="text-blue-500">
+                            <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path>
+                        </svg>
+                        <span> Organizations </span> </a>
+                    </li>
+                    <li id="more-veiw" hidden><a href="../event/events.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="text-yellow-500">
+                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                            </svg><span>  Events </span></a>
+                    </li>
+                </ul>
+    
+                <a href="#" class="see-mover h-10 flex my-1 pl-2 rounded-xl text-gray-600" uk-toggle="target: #more-veiw; animation: uk-animation-fade">
+                    <span class="w-full flex items-center" id="more-veiw">
+                        <svg class="  bg-gray-100 mr-2 p-0.5 rounded-full text-lg w-7" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                        See More
+                    </span>
+                    <span class="w-full flex items-center" id="more-veiw" hidden>
+                        <svg  class="bg-gray-100 mr-2 p-0.5 rounded-full text-lg w-7"  fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd"></path></svg>
+                        See Less
+                    </span>
+                </a>
+    
+                <ul class="side_links" data-sub-title="Pages">
+                    <li><a href="feed.html"> <ion-icon name="settings-outline" class="side-icon"></ion-icon>  <span> Setting  </span> </a>
+                        <ul>
+                            <li><a href="pages-setting.html">layout 1</a></li>
+                            <li><a href="pages-setting2.html">layout 2</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"> <ion-icon name="albums-outline" class="side-icon"></ion-icon> <span> Info Pages  </span> </a>
+                        <ul>
+                            <li><a href="pages-about.html"> About </a></li>
+                            <li><a href="pages-contact.html"> Contact us </a></li>
+                            <li><a href="pages-privacy.html"> Privacy </a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"> <ion-icon name="document-outline" class="side-icon"></ion-icon> <span> Create Content </span>  </a>
+                        <ul>
+                            <li><a href="create-group.html"> Create Group </a></li>
+                            <li><a href="create-page.html"> Create Page </a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"> <ion-icon name="code-slash-outline" class="side-icon"></ion-icon> <span> Development  </span> </a>
+                        <ul>
+                            <li><a href="development-components.html"> Compounents </a></li>
+                            <li><a href="development-plugins.html"> Plugins </a></li>
+                            <li><a href="development-icons.html"> Icons </a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"> <ion-icon name="log-in-outline" class="side-icon"></ion-icon> <span>  Authentication  </span>  </a>
+                        <ul>
+                            <li><a href="form-login.html">form login </a></li>
+                            <li><a href="form-register.html">form register</a></li>
+                        </ul>
+                    </li>
+    
+                </ul>
+    
+                <div class="footer-links">
+                    <a href="#">About</a>
+                    <a href="#">Blog </a>
+                    <a href="#">Careers</a>
+                    <a href="#">Support</a>
+                    <a href="#">Contact Us </a>
+                    <a href="#">Developer</a>
+                    <a href="#">Terms of service</a>
+                </div>
+    
+            </div>
+    
+            <!-- sidebar overly for mobile -->
+            <div class="side_overly" uk-toggle="target: #wrapper ; cls: is-collapse is-active"></div>
+    
+        </div>
+
+        <!-- Main Contents -->
+        <div class="main_content">
+            <div class="mcontainer">
+
+                <div class="flex justify-between relative md:mb-4 mb-3">
+                    <div class="flex-1">
+                        <h2 class="text-2xl font-semibold"> Events </h2>
+                        <nav class="responsive-nav border-b md:m-0 -mx-4">
+                            <ul>
+                                <li class="active"><a href="#" class="lg:px-2">   Interested </a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+               
+                <div class="relative" uk-slider="finite: true">
+                
+                    <div class="uk-slider-container px-1 py-3">
+                        <ul class="uk-slider-items uk-child-width-1-4@m uk-child-width-1-3@s uk-grid-small uk-grid">
+                            <li>
+                                <div class="card">
+                                    <div class="card-media h-32">
+                                        <div class="card-media-overly"></div>
+                                        <img src="../assets/images/events/img-2.jpg" alt="" class="">
+                                        <div
+                                            class="absolute bg-red-100 font-semibold px-2.5 py-1 rounded-full text-red-500 text-xs top-2.5 left-2.5">
+                                            Technology </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="text-xs uppercase text-red-500 font-semibold"> 01 Jun, 2022 </div>
+                                        <a href="details.html" class="box-title mb-1"> The global creative... </a>
+                                        <div class="text-sm font-medium mt-1">Homeboyz Entertainment Ltd.</div>
+                    
+                                        <div class="flex items-center space-x-2 text-sm text-gray-500 capitalize text-xs">
+                                            Houston, USA
+                                        </div>
+                    
+                                        <div class="flex mt-2 space-x-2 text-sm">
+                                            <a href="#"
+                                                class="bg-blue-600 flex flex-1 h-8 items-center justify-center rounded-md text-white capitalize">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                                    class="w-5 mr-1.5">
+                                                    <path
+                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                                    </path>
+                                                </svg> intersted
+                                            </a>
+                                            <a href="#" class="bg-gray-200 flex h-8 items-center px-3 rounded-md">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke="currentColor" class="w-5">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                        d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z">
+                                                    </path>
+                                                </svg>
+                                            </a>
+                                        </div>
+                    
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="card">
+                                    <div class="card-media h-32">
+                                        <div class="card-media-overly"></div>
+                                        <img src="../assets/images/events/img-2.jpg" alt="" class="">
+                                        <div
+                                            class="absolute bg-red-100 font-semibold px-2.5 py-1 rounded-full text-red-500 text-xs top-2.5 left-2.5">
+                                            Technology </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="text-xs uppercase text-red-500 font-semibold"> 01 Jun, 2022 </div>
+                                        <a href="timeline-event.html" class="box-title mb-1"> The global creative... </a>
+                                        <div class="text-sm font-medium mt-1">Homeboyz Entertainment Ltd.</div>
+                    
+                                        <div class="flex items-center space-x-2 text-sm text-gray-500 capitalize text-xs">
+                                            Houston, USA
+                                        </div>
+                    
+                                        <div class="flex mt-2 space-x-2 text-sm">
+                                            <a href="#"
+                                                class="bg-blue-600 flex flex-1 h-8 items-center justify-center rounded-md text-white capitalize">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                                    class="w-5 mr-1.5">
+                                                    <path
+                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                                    </path>
+                                                </svg> intersted
+                                            </a>
+                                            <a href="#" class="bg-gray-200 flex h-8 items-center px-3 rounded-md">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke="currentColor" class="w-5">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                        d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z">
+                                                    </path>
+                                                </svg>
+                                            </a>
+                                        </div>
+                    
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="card">
+                                    <div class="card-media h-32">
+                                        <div class="card-media-overly"></div>
+                                        <img src="../assets/images/events/img-2.jpg" alt="" class="">
+                                        <div
+                                            class="absolute bg-red-100 font-semibold px-2.5 py-1 rounded-full text-red-500 text-xs top-2.5 left-2.5">
+                                            Technology </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="text-xs uppercase text-red-500 font-semibold"> 01 Jun, 2022 </div>
+                                        <a href="timeline-event.html" class="box-title mb-1"> The global creative... </a>
+                                        <div class="text-sm font-medium mt-1">Homeboyz Entertainment Ltd.</div>
+                    
+                                        <div class="flex items-center space-x-2 text-sm text-gray-500 capitalize text-xs">
+                                            Houston, USA
+                                        </div>
+                    
+                                        <div class="flex mt-2 space-x-2 text-sm">
+                                            <a href="#"
+                                                class="bg-blue-600 flex flex-1 h-8 items-center justify-center rounded-md text-white capitalize">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                                    class="w-5 mr-1.5">
+                                                    <path
+                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                                    </path>
+                                                </svg> intersted
+                                            </a>
+                                            <a href="#" class="bg-gray-200 flex h-8 items-center px-3 rounded-md">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke="currentColor" class="w-5">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                        d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z">
+                                                    </path>
+                                                </svg>
+                                            </a>
+                                        </div>
+                    
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="card">
+                                    <div class="card-media h-32">
+                                        <div class="card-media-overly"></div>
+                                        <img src="../assets/images/events/img-2.jpg" alt="" class="">
+                                        <div
+                                            class="absolute bg-red-100 font-semibold px-2.5 py-1 rounded-full text-red-500 text-xs top-2.5 left-2.5">
+                                            Technology </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="text-xs uppercase text-red-500 font-semibold"> 01 Jun, 2022 </div>
+                                        <a href="timeline-event.html" class="box-title mb-1"> The global creative... </a>
+                                        <div class="text-sm font-medium mt-1">Homeboyz Entertainment Ltd.</div>
+                    
+                                        <div class="flex items-center space-x-2 text-sm text-gray-500 capitalize text-xs">
+                                            Houston, USA
+                                        </div>
+                    
+                                        <div class="flex mt-2 space-x-2 text-sm">
+                                            <a href="#"
+                                                class="bg-blue-600 flex flex-1 h-8 items-center justify-center rounded-md text-white capitalize">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                                    class="w-5 mr-1.5">
+                                                    <path
+                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                                    </path>
+                                                </svg> intersted
+                                            </a>
+                                            <a href="#" class="bg-gray-200 flex h-8 items-center px-3 rounded-md">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke="currentColor" class="w-5">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                        d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z">
+                                                    </path>
+                                                </svg>
+                                            </a>
+                                        </div>
+                    
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="card">
+                                    <div class="card-media h-32">
+                                        <div class="card-media-overly"></div>
+                                        <img src="../assets/images/events/img-2.jpg" alt="" class="">
+                                        <div
+                                            class="absolute bg-red-100 font-semibold px-2.5 py-1 rounded-full text-red-500 text-xs top-2.5 left-2.5">
+                                            Technology </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="text-xs uppercase text-red-500 font-semibold"> 01 Jun, 2022 </div>
+                                        <a href="timeline-event.html" class="box-title mb-1"> The global creative... </a>
+                                        <div class="text-sm font-medium mt-1">Homeboyz Entertainment Ltd.</div>
+                    
+                                        <div class="flex items-center space-x-2 text-sm text-gray-500 capitalize text-xs">
+                                            Houston, USA
+                                        </div>
+                    
+                                        <div class="flex mt-2 space-x-2 text-sm">
+                                            <a href="#"
+                                                class="bg-blue-600 flex flex-1 h-8 items-center justify-center rounded-md text-white capitalize">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                                    class="w-5 mr-1.5">
+                                                    <path
+                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                                    </path>
+                                                </svg> intersted
+                                            </a>
+                                            <a href="#" class="bg-gray-200 flex h-8 items-center px-3 rounded-md">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke="currentColor" class="w-5">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                        d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z">
+                                                    </path>
+                                                </svg>
+                                            </a>
+                                        </div>
+                    
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="card">
+                                    <div class="card-media h-32">
+                                        <div class="card-media-overly"></div>
+                                        <img src="../assets/images/events/img-2.jpg" alt="" class="">
+                                        <div
+                                            class="absolute bg-red-100 font-semibold px-2.5 py-1 rounded-full text-red-500 text-xs top-2.5 left-2.5">
+                                            Technology </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="text-xs uppercase text-red-500 font-semibold"> 01 Jun, 2022 </div>
+                                        <a href="timeline-event.html" class="box-title mb-1"> The global creative... </a>
+                                        <div class="text-sm font-medium mt-1">Homeboyz Entertainment Ltd.</div>
+                    
+                                        <div class="flex items-center space-x-2 text-sm text-gray-500 capitalize text-xs">
+                                            Houston, USA
+                                        </div>
+                    
+                                        <div class="flex mt-2 space-x-2 text-sm">
+                                            <a href="#"
+                                                class="bg-blue-600 flex flex-1 h-8 items-center justify-center rounded-md text-white capitalize">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                                    class="w-5 mr-1.5">
+                                                    <path
+                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                                    </path>
+                                                </svg> intersted
+                                            </a>
+                                            <a href="#" class="bg-gray-200 flex h-8 items-center px-3 rounded-md">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke="currentColor" class="w-5">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                        d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z">
+                                                    </path>
+                                                </svg>
+                                            </a>
+                                        </div>
+                    
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <a class="absolute bg-white top-16 flex items-center justify-center p-2 -left-4 rounded-full shadow-md text-xl w-9 z-10 dark:bg-gray-800 dark:text-white" href="#" uk-slider-item="previous"> <i class="icon-feather-chevron-left"></i></a>
+                        <a class="absolute bg-white top-16 flex items-center justify-center p-2 -right-4 rounded-full shadow-md text-xl w-9 z-10 dark:bg-gray-800 dark:text-white" href="#" uk-slider-item="next"> <i class="icon-feather-chevron-right"></i></a>
+
+                    </div>
+                </div>
+                <br>
+
+                <div class="flex justify-between relative md:mb-4 mb-3">
+                    <div class="flex-1">
+                        <h2 class="text-2xl font-semibold"> Upcomming Events </h2>
+                    </div>
+                    <a href="#" class="flex items-center justify-center h-9 lg:px-5 px-2 rounded-md bg-blue-600 text-white space-x-1.5 absolute right-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="md:block hidden"> Filter </span>
+                    </a> 
+                </div>
+                <br>
+
+                             <!--  Feeds  -->
+                             <div class="lg:flex lg:space-x-10">
+                                <div class="lg:w-3/4 space-y-7">
+            
+                                    <div class="flex justify-between relative md:mb-4 mb-3">
+                                        <div class="flex-1">
+                                            <div class="divide-y -mt-3 card px-5 py-2 ">
+                        
+                                                <div class="flex sm:flex-row flex-col sm:space-x-4 py-4 relative w-full">
+                                                    <div class="sm:w-56 w-full h-32 overflow-hidden rounded-lg relative shadow-sm flex-shrink-0"> 
+                                                        <img src="../assets/images/games/img-lg-1.jpg" alt="" class="w-full h-full absolute inset-0 object-cover">
+                                                        <span class="absolute bg-black bg-opacity-60 bottom-1 font-semibold px-1.5 py-0.5 right-1 rounded text-white text-xs"> Technology </span>
+                                                    </div>
+                                                    <div class="flex-1 relative md:mt-0 mt-4"> 
+                                                        <a href="details.html" class="text-xl font-semibold leading-6">MedTech MVP Venture & Partnering Conference </a>
+                                                        <!-- <p class="leading-6 line-clamp-2 mt-2"> consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam,</p> -->
+                                                        <div class="font-semibold mt-2"> Homeboyz Entertainment Ltd. </div>
+                                                        <div class="flex space-x-2 items-center text-sm pt-1">
+                                                            Houston, USA
+                                                        </div>
+                                                        <div class="flex space-x-2 items-center text-sm pt-1">
+                                                            <div class="text-xs uppercase text-red-500 font-semibold"> 01 Jun, 2022 </div>
+                                                            
+                                                            <a href="#" class="bg-blue-600 flex flex-1 h-8 items-center justify-center rounded-md text-white capitalize">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 mr-1.5">
+                                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                                                    </path>
+                                                                </svg> intersted
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex sm:flex-row flex-col sm:space-x-4 py-4 relative w-full">
+                                                    <div class="sm:w-56 w-full h-32 overflow-hidden rounded-lg relative shadow-sm flex-shrink-0"> 
+                                                        <img src="../assets/images/games/img-lg-1.jpg" alt="" class="w-full h-full absolute inset-0 object-cover">
+                                                        <span class="absolute bg-black bg-opacity-60 bottom-1 font-semibold px-1.5 py-0.5 right-1 rounded text-white text-xs"> Technology </span>
+                                                    </div>
+                                                    <div class="flex-1 relative md:mt-0 mt-4"> 
+                                                        <a href="#" class="text-xl font-semibold leading-6">MedTech MVP Venture & Partnering Conference </a>
+                                                        <!-- <p class="leading-6 line-clamp-2 mt-2"> consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam,</p> -->
+                                                        <div class="font-semibold mt-2"> Homeboyz Entertainment Ltd. </div>
+                                                        <div class="flex space-x-2 items-center text-sm pt-1">
+                                                            Houston, USA
+                                                        </div>
+                                                        <div class="flex space-x-2 items-center text-sm pt-1">
+                                                            <div class="text-xs uppercase text-red-500 font-semibold"> 01 Jun, 2022 </div>
+                                                            
+                                                            <a href="#" class="bg-blue-600 flex flex-1 h-8 items-center justify-center rounded-md text-white capitalize">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 mr-1.5">
+                                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                                                    </path>
+                                                                </svg> intersted
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex sm:flex-row flex-col sm:space-x-4 py-4 relative w-full">
+                                                    <div class="sm:w-56 w-full h-32 overflow-hidden rounded-lg relative shadow-sm flex-shrink-0"> 
+                                                        <img src="../assets/images/games/img-lg-1.jpg" alt="" class="w-full h-full absolute inset-0 object-cover">
+                                                        <span class="absolute bg-black bg-opacity-60 bottom-1 font-semibold px-1.5 py-0.5 right-1 rounded text-white text-xs"> Technology </span>
+                                                    </div>
+                                                    <div class="flex-1 relative md:mt-0 mt-4"> 
+                                                        <a href="#" class="text-xl font-semibold leading-6">MedTech MVP Venture & Partnering Conference </a>
+                                                        <!-- <p class="leading-6 line-clamp-2 mt-2"> consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam,</p> -->
+                                                        <div class="font-semibold mt-2"> Homeboyz Entertainment Ltd. </div>
+                                                        <div class="flex space-x-2 items-center text-sm pt-1">
+                                                            Houston, USA
+                                                        </div>
+                                                        <div class="flex space-x-2 items-center text-sm pt-1">
+                                                            <div class="text-xs uppercase text-red-500 font-semibold"> 01 Jun, 2022 </div>
+                                                            
+                                                            <a href="#" class="bg-blue-600 flex flex-1 h-8 items-center justify-center rounded-md text-white capitalize">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 mr-1.5">
+                                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                                                    </path>
+                                                                </svg> intersted
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex sm:flex-row flex-col sm:space-x-4 py-4 relative w-full">
+                                                    <div class="sm:w-56 w-full h-32 overflow-hidden rounded-lg relative shadow-sm flex-shrink-0"> 
+                                                        <img src="../assets/images/games/img-lg-1.jpg" alt="" class="w-full h-full absolute inset-0 object-cover">
+                                                        <span class="absolute bg-black bg-opacity-60 bottom-1 font-semibold px-1.5 py-0.5 right-1 rounded text-white text-xs"> Technology </span>
+                                                    </div>
+                                                    <div class="flex-1 relative md:mt-0 mt-4"> 
+                                                        <a href="#" class="text-xl font-semibold leading-6">MedTech MVP Venture & Partnering Conference </a>
+                                                        <!-- <p class="leading-6 line-clamp-2 mt-2"> consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam,</p> -->
+                                                        <div class="font-semibold mt-2"> Homeboyz Entertainment Ltd. </div>
+                                                        <div class="flex space-x-2 items-center text-sm pt-1">
+                                                            Houston, USA
+                                                        </div>
+                                                        <div class="flex space-x-2 items-center text-sm pt-1">
+                                                            <div class="text-xs uppercase text-red-500 font-semibold"> 01 Jun, 2022 </div>
+                                                            
+                                                            <a href="#" class="bg-blue-600 flex flex-1 h-8 items-center justify-center rounded-md text-white capitalize">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 mr-1.5">
+                                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                                                    </path>
+                                                                </svg> intersted
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                    
+                                                <div class="flex justify-center mt-6">
+                                                    <a href="#" class="bg-white dark:bg-gray-900 font-semibold my-3 px-6 py-2 rounded-full shadow-md dark:bg-gray-800 dark:text-white">
+                                                        Load more ..</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                            
+            
+                                </div>
+                                <div class="lg:w-72 w-full">
+            
+                                    <div class="widget card p-5">
+                                        <h4 class="text-lg font-semibold"> Filter </h4>
+                                        <ul class="text-gray-600 space-y-3 mt-3">
+                                            <li class="flex items-center space-x-2"> 
+                                                <ion-icon name="home-sharp" class="rounded-full bg-gray-200 text-xl p-1 mr-3 md hydrated" role="img" aria-label="home sharp"></ion-icon>
+                                                Place <strong> Bangladesh  </strong>
+                                            </li>
+                                            <li class="flex items-center space-x-2"> 
+                                                <ion-icon name="globe" class="rounded-full bg-gray-200 text-xl p-1 mr-3 md hydrated" role="img" aria-label="globe"></ion-icon>
+                                                Category <strong> Fashion  </strong>
+                                            </li>                              
+                                        </ul>
+                                      <a href="#" class="button gray mt-3 w-full"> Apply </a>
+                                    </div>
+            
+                                </div>
+                            </div>
+        
+            </div>
+        </div>
+        
+    </div>
+    
+    <!-- For Night mode -->
+    <script>
+        (function (window, document, undefined) {
+            'use strict';
+            if (!('localStorage' in window)) return;
+            var nightMode = localStorage.getItem('gmtNightMode');
+            if (nightMode) {
+                document.documentElement.className += ' night-mode';
+            }
+        })(window, document);
+    
+        (function (window, document, undefined) {
+    
+            'use strict';
+    
+            // Feature test
+            if (!('localStorage' in window)) return;
+    
+            // Get our newly insert toggle
+            var nightMode = document.querySelector('#night-mode');
+            if (!nightMode) return;
+    
+            // When clicked, toggle night mode on or off
+            nightMode.addEventListener('click', function (event) {
+                event.preventDefault();
+                document.documentElement.classList.toggle('dark');
+                if (document.documentElement.classList.contains('dark')) {
+                    localStorage.setItem('gmtNightMode', true);
+                    return;
+                }
+                localStorage.removeItem('gmtNightMode');
+            }, false);
+    
+        })(window, document);
+    </script>
+    
+    <!-- Javascript
+    ================================================== -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="../assets/js/tippy.all.min.js"></script>
+    <script src="../assets/js/uikit.js"></script>
+    <script src="../assets/js/simplebar.js"></script>
+    <script src="../assets/js/custom.js"></script>
+    <script src="../assets/js/bootstrap-select.min.js"></script>
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+</body>
+</html>

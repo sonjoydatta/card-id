@@ -1,6 +1,6 @@
 import { config } from '@/config';
 import { LoginParams, LoginResponse } from './@types';
-import { HttpService } from './http.service';
+import { HttpService } from './httpService';
 
 class AuthAPI {
 	constructor(private http: HttpService) {}

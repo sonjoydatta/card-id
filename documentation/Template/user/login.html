@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CARD ID</title>
+
+    <!-- icons
+    ================================================== -->
+    <link rel="stylesheet" href="../assets/css/icons.css">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="../assets/css/uikit.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link href="https://unpkg.com/tailwindcss@%5E2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="lg:flex max-w-5xl min-h-screen mx-auto p-6 py-10">
+        <div class="flex flex-col items-center lg: lg:flex-row lg:space-x-10">
+
+            <div class="lg:mb-12 flex-1 lg:text-left text-center">
+                <img src="../assets/images/logo.png" alt="" class="lg:mx-0 lg:w-52 mx-auto w-40">
+                <p class="font-medium lg:mx-0 md:text-2xl mt-6 mx-auto sm:w-3/4 text-xl"> Connect with friends and the world around you on Socialite.</p>
+            </div>
+            <div class="lg:mt-0 lg:w-96 md:w-1/2 sm:w-2/3 mt-10 w-full">
+                <form method="post" action="../home/home.html" class="p-6 space-y-4 relative bg-white shadow-lg rounded-lg">
+                    <input type="email" id="id_username" name="username" placeholder="Email Address" class="with-border">
+                    <input type="password" id="id_password" name="password" placeholder="Password" class="with-border">
+                    <button type="submit" class="bg-blue-600 font-semibold p-3 rounded-md text-center text-white w-full">
+                        Log In
+                    </button>
+                    <a href="forgot/forgot.html" class="text-blue-500 text-center block"> Forgot Password? </a>
+                    <hr class="pb-3.5">
+                    <div class="flex">
+                        <a href="signup.html" type="button" class="bg-green-600 hover:bg-green-500 hover:text-white font-semibold py-3 px-5 rounded-md text-center text-white mx-auto" uk-toggle>
+                            Create New Account
+                        </a>
+                    </div>
+                </form>
+                <div class="mt-8 text-center text-sm"> <a href="#" class="font-semibold hover:underline"> Create a Page </a> for a celebrity, band or business </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- For Night mode -->
+<script>
+    (function (window, document, undefined) {
+        'use strict';
+        if (!('localStorage' in window)) return;
+        var nightMode = localStorage.getItem('gmtNightMode');
+        if (nightMode) {
+            document.documentElement.className += ' night-mode';
+        }
+    })(window, document);
+
+    (function (window, document, undefined) {
+
+        'use strict';
+
+        // Feature test
+        if (!('localStorage' in window)) return;
+
+        // Get our newly insert toggle
+        var nightMode = document.querySelector('#night-mode');
+        if (!nightMode) return;
+
+        // When clicked, toggle night mode on or off
+        nightMode.addEventListener('click', function (event) {
+            event.preventDefault();
+            document.documentElement.classList.toggle('dark');
+            if (document.documentElement.classList.contains('dark')) {
+                localStorage.setItem('gmtNightMode', true);
+                return;
+            }
+            localStorage.removeItem('gmtNightMode');
+        }, false);
+
+    })(window, document);
+</script>
+
+<!-- Javascript
+================================================== -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="../assets/js/tippy.all.min.js"></script>
+<script src="../assets/js/uikit.js"></script>
+<script src="../assets/js/simplebar.js"></script>
+<script src="../assets/js/custom.js"></script>
+<script src="../assets/js/bootstrap-select.min.js"></script>
+<script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+
+</body>
+</html>
